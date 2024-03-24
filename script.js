@@ -104,14 +104,16 @@ function revealCell(event) {
             revealAdjacentZeros(row, col);
         } else {
             cell.textContent = mineCount;
-        }
-        cell.classList.add('revealed');
-        revealedCount++;
-        if (revealedCount === (gridSize * gridSize) - totalMines) {
-            win();
+            cell.classList.add('revealed');
+            revealedCount = document.querySelectorAll('.cell.revealed').length;
+            console.log(revealedCount, (gridSize * gridSize) - totalMines);
+            if (revealedCount === (gridSize * gridSize) - totalMines) {
+                win();
+            }
         }
     }
 }
+
 
 function flagCell(event) {
     event.preventDefault();
@@ -135,12 +137,12 @@ function stopTimer() {
 
 function gameOver() {
     stopTimer();
-    messageDisplay.innerHTML = '<img src="bomb.png" alt="Bomb"> Game Over';
+    messageDisplay.innerHTML = '<img src="img/explosion.png" alt="Bomb"> Game Over';
 }
 
 function win() {
     stopTimer();
-    messageDisplay.innerHTML = '<img src="trophy.png" alt="Trophy"> Congratulations! You Win!';
+    messageDisplay.innerHTML = '<img src="img/trophy.png" alt="Trophy"> Congratulations! You Win!';
 }
 
 createGrid();
