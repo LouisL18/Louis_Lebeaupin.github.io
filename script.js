@@ -38,10 +38,13 @@ function placeMines(excludedCell) {
 }
 
 function initializeGrid(row, col) {
-    placeMines({ row, col });
+    let excludedCell = { row: row, col: col };
+    placeMines(excludedCell);
+    revealAdjacentZeros(row, col);
     firstClick = false;
     startTimer();
 }
+
 
 function revealAdjacentZeros(row, col) {
     for (let i = -1; i <= 1; i++) {
