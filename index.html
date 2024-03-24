@@ -26,9 +26,20 @@
             list-style: none;
             padding: 0;
             margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         li {
             margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex; /* Added */
+            flex-direction: column; /* Added */
+            align-items: center; /* Added */
+            text-align: center; /* Added */
         }
         a {
             display: inline-block;
@@ -38,9 +49,14 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
+            margin-top: 10px; /* Added */
         }
         a:hover {
             background-color: #0056b3;
+        }
+        img {
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
@@ -48,9 +64,18 @@
     <div class="container">
         <h1>Choisissez un jeu :</h1>
         <ul>
-            <li><a href="jeu/demineur.html">Démineur</a></li>
-            <li><a href="jeu/tetris.html">Tetris</a></li>
-            <li><a href="jeu/pacman.html">Pacman</a></li>
+            <li>
+                <img src="jeu/img/flag.png" alt="Démineur">
+                <a href="jeu/demineur.html">Démineur</a>
+            </li>
+            <li>
+                <img src="jeu/img/tetris.png" alt="Tetris">
+                <a href="jeu/tetris.html">Tetris</a>
+            </li>
+            <li>
+                <img src="jeu/img/pacman.png" alt="Pacman">
+                <a href="jeu/pacman.html">Pacman</a>
+            </li>
         </ul>
     </div>
 </body>
